@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tech.codingclub.helix</groupId>
-    <artifactId>helix</artifactId>
+    <artifactId>Twitter</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -30,6 +30,7 @@
     </repositories>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -154,6 +155,15 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
+
+        <!-- For file uploading -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.1</version> <!-- makesure correct version here -->
+        </dependency>
+
+
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
@@ -388,14 +398,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -407,7 +409,7 @@
             <properties>
                 <DB_URL>jdbc:postgresql://localhost:5432/</DB_URL>
                 <BASE_DIR>FILL BASE DIR</BASE_DIR>
-                <DB_NAME>train_enquiry</DB_NAME>
+                <DB_NAME>twitter</DB_NAME>
                 <DB_USERNAME>postgres</DB_USERNAME>
                 <DB_PASSWORD>postgres</DB_PASSWORD>
                 <SERVER_DOMAIN>localhost:8080</SERVER_DOMAIN>
@@ -418,7 +420,7 @@
             <id>LOCAL-ANKUR</id>
             <properties>
                 <DB_URL>jdbc:postgresql://localhost:5432/</DB_URL>
-                <BASE_DIR>D:\coding-mafia\NTES</BASE_DIR>
+                <BASE_DIR>/home/ankur/coding-club-FSD/NTES</BASE_DIR>
                 <DB_NAME>train_enquiry</DB_NAME>
                 <DB_USERNAME>postgres</DB_USERNAME>
                 <DB_PASSWORD>postgres</DB_PASSWORD>

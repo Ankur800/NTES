@@ -1,7 +1,6 @@
 package tech.codingclub.helix.controller;
 
 import org.jooq.Condition;
-import org.jooq.Field;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +14,7 @@ import tech.codingclub.helix.fetcher.QueryFetcher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 @Controller
@@ -40,11 +36,19 @@ public class UserController extends BaseController {
 
         modelMap.addAttribute("LOCATION", location);
 
-        // adding time to model-map
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        //System.out.println(dtf.format(now));
-        modelMap.addAttribute("TIME", dtf.format(now));
+        // adding time-day-date to model-map
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        Date date = calendar.getTime();
+        int day = calendar.get(Calendar.DATE);
+        int month = calendar.get(Calendar.MONTH) + 1;
+        String temp  = date.toString();
+        String[] forDay = temp.split(" ");
+        String currentDay = forDay[0] + " ";
+        currentDay += day + "/";
+        currentDay += month;
+
+        modelMap.addAttribute("TIME", currentDay);
+
 
         return "welcome";
     }

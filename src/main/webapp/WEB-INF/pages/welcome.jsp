@@ -3,7 +3,7 @@
     <link rel="short icon" type="image/png" href="/static/images/favicon.ico"/>
 
     <head>
-        <link rel="stylesheet" href="/static/css/css-welcome.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/css-welcome.css">
     </head>
     <head>
         <script
@@ -157,50 +157,14 @@
                     </div>
 
 
-                    <div class="weather block clear"> <!-- WEATHER (MIDDLE-CONTAINER) -->
-                        <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.state}</strong></h2>
+                    <div class="weather block clear" style="height: 200;"> <!-- WEATHER (MIDDLE-CONTAINER) -->
+                        <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.city}</strong></h2>
                         <div class="current-day">
                             <p class="current-day-date">${TIME}</p>
-                            <p class="current-day-temperature">24º<span class="icon-cloudy"></span></p>
+                            <p id="time_zone" class="current-day-temperature" style="padding-left: 20px;"><span class="icon-cloudy"></span></p>
                         </div>
-                        <ul class="next-days">
-                            <li>
-                                <a href="#43">
-                                    <p class="next-days-date"><span class="day">SAT</span> <span class="scnd-font-color">29/06</span></p>
-                                    <p class="next-days-temperature">25º<span class="icon icon-cloudy scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#44">
-                                    <p class="next-days-date"><span class="day">SUN</span> <span class="scnd-font-color">30/06</span></p>
-                                    <p class="next-days-temperature">22º<span class="icon icon-cloudy2 scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#45">
-                                    <p class="next-days-date"><span class="day">MON</span> <span class="scnd-font-color">01/07</span></p>
-                                    <p class="next-days-temperature">24º<span class="icon icon-cloudy2 scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#46">
-                                    <p class="next-days-date"><span class="day">TUE</span> <span class="scnd-font-color">02/07</span></p>
-                                    <p class="next-days-temperature">26º<span class="icon icon-cloudy scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <p class="next-days-date"><span class="day">WED</span> <span class="scnd-font-color">03/07</span></p>
-                                    <p class="next-days-temperature">27º<span class="icon icon-sun scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <p class="next-days-date"><span class="day">THU</span> <span class="scnd-font-color">04/07</span></p>
-                                    <p class="next-days-temperature">29º<span class="icon icon-sun scnd-font-color"></span></p>
-                                </a>
-                            </li>
-                        </ul>
+
+
                     </div>
                     <div class="tweets block"> <!-- TWEETS (MIDDLE-CONTAINER) -->
                         <h2 class="titular"><span class="icon zocial-twitter"></span>LATEST TWEETS</h2>
@@ -410,6 +374,28 @@
                     }
 
                 });
+
+                function checkTime(i) {
+                  if (i < 10) {
+                    i = "0" + i;
+                  }
+                  return i;
+                }
+
+                function startTime() {
+                  var today = new Date();
+                  var h = today.getHours();
+                  var m = today.getMinutes();
+                  var s = today.getSeconds();
+                  // add a zero in front of numbers<10
+                  m = checkTime(m);
+                  s = checkTime(s);
+                  document.getElementById('time_zone').innerHTML = h + ":" + m + ":" + s;
+                  t = setTimeout(function() {
+                    startTime()
+                  }, 500);
+                }
+                startTime();
 
             </script>
 
