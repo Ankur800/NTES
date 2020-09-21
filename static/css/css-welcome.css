@@ -855,7 +855,7 @@ h1, h2, p, a, span{
 							padding-left: 10px;
 						}
 			.tweets {
-				height: 375px;
+				height: auto;
 			}
 				.tweets .titular {
 					background: #35aadc;

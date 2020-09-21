@@ -52,7 +52,7 @@ public class UserController extends BaseController {
 
         // adding recent news on welcome page
         NewsFetcher newsFetcher = new NewsFetcher();
-        ArrayList<News> news = newsFetcher.fetchRecentNews();
+        List<News> news = newsFetcher.fetchRecentNews();
 
         modelMap.addAttribute("NEWS", news);
 

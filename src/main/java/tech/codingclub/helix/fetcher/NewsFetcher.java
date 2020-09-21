@@ -8,11 +8,12 @@ import tech.codingclub.helix.entity.News;
 import tech.codingclub.helix.global.HttpURLConnectionExample;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NewsFetcher {
 
-    public static ArrayList<News> fetchRecentNews() throws Exception {
-        ArrayList<News> allNews = new ArrayList<News>();
+    public static List<News> fetchRecentNews() throws Exception {
+        List<News> allNews = new ArrayList<News>();
 
         String link = "https://indiarailinfo.com/news";
         String responseHTML = HttpURLConnectionExample.sendGet(link);
@@ -21,7 +22,13 @@ public class NewsFetcher {
 
         Elements allData = document.body().select(".blogheader");
 
+        //int state = 0;
+
         for(Element newsData : allData){
+/*            if(state >= 2) {
+                break;
+            }
+            state++;*/
             News news = new News();
 
             String rawData = newsData.text();

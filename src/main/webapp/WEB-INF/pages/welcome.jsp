@@ -1,3 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+    import="java.io.*,java.util.*,java.sql.*"%>
+
 <html>
 
     <link rel="short icon" type="image/png" href="/static/images/favicon.ico"/>
@@ -182,14 +187,14 @@
 
                     </div>
                     <div class="tweets block"> <!-- TWEETS (MIDDLE-CONTAINER) -->
-                        <h2 class="titular"><span class="icon zocial-twitter"></span>LATEST NEWS</h2>
+                        <h2 class="titular">LATEST NEWS</h2>
 
                         <c:forEach var="myNews" items="${NEWS}">
 
-                        <div class="tweet first">
-                            <p>${myNews.news}<a class="tweet-link" href="#17">${myNews.time}</a></p>
-                            <p><a class="time-ago scnd-font-color" href="#18">${myNews.day}</a></p>
-                        </div>
+                            <div class="tweet first">
+                                <p>${myNews.news}<a class="tweet-link" href="#17">${myNews.time}</a></p>
+                                <p><a class="time-ago scnd-font-color" href="#18">${myNews.day}</a></p>
+                            </div>
 
                         </c:forEach>
 
