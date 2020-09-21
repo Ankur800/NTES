@@ -59,7 +59,7 @@
                         </li>
                     </ul>
                     <div class="profile-menu">
-                        <p>Me<a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
+                        <p>${USER.name}<a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                         <div class="profile-picture small-profile-picture">
                             <img width="40px" alt="User" src="/static/images/default-user.jpg">
                         </div>
@@ -71,8 +71,8 @@
                 <!-- LEFT-CONTAINER -->
                 <div class="left-container container">
                     <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
-                        <h2 class="titular">E-Services</h2>
-                        <ul class="menu-box-menu">
+                        <h2 class="titular">e-Services</h2>
+                        <ul class="menu-box-menu" style="text-align:left;">
                             <li>
                                 <a class="menu-box-tab" href="http://localhost:8080/user/live_station"><span class="icon entypo-chart-line scnd-font-color"></span>Live Station<div class="menu-box-number"></div></a>
                             </li>
@@ -85,7 +85,7 @@
 
 
                     <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
-                        <h2 class="titular">INDIAN AUDIENCE STATS</h2>
+                        <h2 class="titular">INDIAN PASSENGERS STATS</h2>
                         <div class="donut-chart">
 
                             <div id="porcion1" class="recorte"><div class="quesito ios" data-rel="60"></div></div>
