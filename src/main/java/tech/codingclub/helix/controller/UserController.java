@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import tech.codingclub.helix.database.GenericDB;
 import tech.codingclub.helix.entity.*;
 import tech.codingclub.helix.fetcher.LocationFetcher;
+import tech.codingclub.helix.fetcher.NewsFetcher;
 import tech.codingclub.helix.fetcher.QueryFetcher;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,6 +49,12 @@ public class UserController extends BaseController {
         currentDay += month;
 
         modelMap.addAttribute("TIME", currentDay);
+
+        // adding recent news on welcome page
+        NewsFetcher newsFetcher = new NewsFetcher();
+        ArrayList<News> news = newsFetcher.fetchRecentNews();
+
+        modelMap.addAttribute("NEWS", news);
 
 
         return "welcome";

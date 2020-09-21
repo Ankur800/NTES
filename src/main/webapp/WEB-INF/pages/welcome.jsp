@@ -182,21 +182,19 @@
 
                     </div>
                     <div class="tweets block"> <!-- TWEETS (MIDDLE-CONTAINER) -->
-                        <h2 class="titular"><span class="icon zocial-twitter"></span>LATEST TWEETS</h2>
+                        <h2 class="titular"><span class="icon zocial-twitter"></span>LATEST NEWS</h2>
+
+                        <c:forEach var="myNews" items="${NEWS}">
+
                         <div class="tweet first">
-                            <p>Ice-cream trucks only play music when out of ice-cream. Well played dad. On <a class="tweet-link" href="#17">@Quora</a></p>
-                            <p><a class="time-ago scnd-font-color" href="#18">3 minutes ago</a></p>
+                            <p>${myNews.news}<a class="tweet-link" href="#17">${myNews.time}</a></p>
+                            <p><a class="time-ago scnd-font-color" href="#18">${myNews.day}</a></p>
                         </div>
-                        <div class="tweet">
-                            <p>We are in the process of pushing out all of the new CC apps! We will tweet again once they are live <a class="tweet-link" href="#19">#CreativeCloud</a></p>
-                            <p><a class="scnd-font-color" href="#20">6 hours ago</a></p>
-                        </div>
+
+                        </c:forEach>
+
                     </div>
-                    <ul class="social block"> <!-- SOCIAL (MIDDLE-CONTAINER) -->
-                        <li><a href="#50"><div class="facebook icon"><span class="zocial-facebook"></span></div><h2 class="facebook titular">SHARE TO FACEBOOK</h2></li></a>
-                        <li><a href="#51"><div class="twitter icon"><span class="zocial-twitter"></span></div><h2 class="twitter titular">SHARE TO TWITTER</h2></li></a>
-                        <li><a href="#52"><div class="googleplus icon"><span class="zocial-googleplus"></span></div><h2 class="googleplus titular">SHARE TO GOOGLE+</h2></li></a>
-                    </ul>
+
                 </div>
 
 
