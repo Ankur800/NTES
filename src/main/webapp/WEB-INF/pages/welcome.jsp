@@ -124,7 +124,6 @@
                 <!-- MIDDLE-CONTAINER -->
                 <div class="middle-container container">
                     <div class="profile block">
-                        <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                         <div class="profile-picture big-profile-picture clear">
                             <img width="150px" alt="Indian Railways" src="/static/images/logo.png" >
                         </div>
@@ -133,14 +132,6 @@
                             <p class="scnd-font-color">Lifeline of the Nation...</p>
                         </div>
                     </div>
-
-
-                    <div class="weather block clear" style="height: 200;"> <!-- WEATHER (MIDDLE-CONTAINER) -->
-                        <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.city}</strong></h2>
-
-                        <iframe width="300" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src=${GOOGLELOCATION.linkForLocation}></iframe> <a href='https://www.add-map.net/'>google map on my website</a> <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=03498a0242799ce6c55a852549bfa9e9d74e474a'></script>
-                    </div>
-
 
                     <div class="tweets block"> <!-- TWEETS (MIDDLE-CONTAINER) -->
                         <h2 class="titular">LATEST NEWS</h2>
@@ -164,6 +155,14 @@
 
                 <!-- RIGHT-CONTAINER -->
                 <div class="right-container container">
+
+                    <div class="weather block clear" style="height: 200;"> <!-- WEATHER (MIDDLE-CONTAINER) -->
+                        <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.city}</strong></h2>
+
+                        <iframe width="300" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src=${GOOGLELOCATION.linkForLocation}></iframe> <a href='https://www.add-map.net/'>google map on my website</a> <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=03498a0242799ce6c55a852549bfa9e9d74e474a'></script>
+                    </div>
+
+
                     <div class="media block">
                         <div >
                             <iframe width="300" height="220" src="https://www.youtube.com/embed/nrnCo4aWzIg">

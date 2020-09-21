@@ -1,4 +1,5 @@
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/global/HttpURLConnectionExample.java
+/home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/GoogleLocation.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/Location.java
 /home/ankur/coding-club-FSD/NTES/src/generated-sources/jooq/tech/codingclub/helix/Public.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/fetcher/NewsFetcher.java
@@ -21,6 +22,7 @@
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/controller/BaseController.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/News.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/fetcher/QueryFetcher.java
+/home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/CurrentDay.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/LoginResponse.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/controller/MainController.java
 /home/ankur/coding-club-FSD/NTES/src/generated-sources/jooq/tech/codingclub/helix/Sequences.java
