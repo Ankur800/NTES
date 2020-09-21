@@ -1,6 +1,7 @@
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/global/HttpURLConnectionExample.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/Location.java
 /home/ankur/coding-club-FSD/NTES/src/generated-sources/jooq/tech/codingclub/helix/Public.java
+/home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/fetcher/NewsFetcher.java
 /home/ankur/coding-club-FSD/NTES/src/generated-sources/jooq/tech/codingclub/helix/tables/records/UserRecord.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/database/GenericDB.java
 /home/ankur/coding-club-FSD/NTES/src/generated-sources/jooq/tech/codingclub/helix/Tables.java

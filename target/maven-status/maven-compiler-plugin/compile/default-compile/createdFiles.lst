@@ -10,6 +10,7 @@ tech/codingclub/helix/tables/User.class
 tech/codingclub/helix/Tables.class
 tech/codingclub/helix/entity/SignupResponse.class
 tech/codingclub/helix/Keys.class
+tech/codingclub/helix/fetcher/NewsFetcher.class
 tech/codingclub/helix/controller/MainController.class
 tech/codingclub/helix/Public.class
 tech/codingclub/helix/entity/Journey.class

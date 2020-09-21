@@ -28,7 +28,7 @@ public class UserController extends BaseController {
         User user = ControllerUtils.getCurrentMember(request);
 
         //access only when he is logged in!
-        modelMap.addAttribute("NAME", user.name);
+        modelMap.addAttribute("NAME", user);
 
         // adding location to model map
         LocationFetcher locationFetcher = new LocationFetcher();

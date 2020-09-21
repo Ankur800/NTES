@@ -4,6 +4,8 @@
 
     <head>
         <link rel="stylesheet" type="text/css" href="/static/css/css-welcome.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/clock.css">
+
     </head>
     <head>
         <script
@@ -18,6 +20,22 @@
             <div class="main-container">
 
                 <!-- HEADER -->
+                <!-- CLOCK --!>
+
+                  <span class="digit"></span>
+                  <span class="digit"></span>
+
+                  <span class="colon"></span>
+
+                  <span class="digit"></span>
+                  <span class="digit"></span>
+
+                  <span class="colon"></span>
+
+                  <span class="digit"></span>
+                  <span class="digit"></span>
+
+
                 <header class="block">
                     <ul class="header-menu horizontal-list">
                         <li>
@@ -35,7 +53,7 @@
                         </li>
                     </ul>
                     <div class="profile-menu">
-                        <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
+                        <p>Me<a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                         <div class="profile-picture small-profile-picture">
                             <img width="40px" alt="User" src="/static/images/default-user.jpg">
                         </div>
@@ -159,10 +177,7 @@
 
                     <div class="weather block clear" style="height: 200;"> <!-- WEATHER (MIDDLE-CONTAINER) -->
                         <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.city}</strong></h2>
-                        <div class="current-day">
-                            <p class="current-day-date">${TIME}</p>
-                            <p id="time_zone" class="current-day-temperature" style="padding-left: 20px;"><span class="icon-cloudy"></span></p>
-                        </div>
+
 
 
                     </div>
@@ -306,6 +321,9 @@
                     </div> <!-- end calendar-month block -->
                 </div> <!-- end right-container -->
             </div> <!-- end main-container -->
+
+
+            <script type="text/javascript" src="/static/js/clock.js"></script>
 
 
             <script>
