@@ -19,6 +19,7 @@
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/User.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/UserBase.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/controller/BaseController.java
+/home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/News.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/fetcher/QueryFetcher.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/entity/LoginResponse.java
 /home/ankur/coding-club-FSD/NTES/src/main/java/tech/codingclub/helix/controller/MainController.java

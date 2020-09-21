@@ -22,13 +22,13 @@ public class NewsFetcher {
 
         Elements allData = document.body().select(".blogheader");
 
-        //int state = 0;
+        int state = 0;
 
         for(Element newsData : allData){
-/*            if(state >= 2) {
+            if(state >= 3) {
                 break;
             }
-            state++;*/
+            state++;
             News news = new News();
 
             String rawData = newsData.text();
@@ -41,9 +41,16 @@ public class NewsFetcher {
             String[] newsDataForNews = newsDataListForTime[1].split("\\(");
             news.news = newsDataForNews[0];
 
+            String[] websiteFetch = newsDataForNews[1].split("\\)");
+            news.website = websiteFetch[0];
+
             allNews.add(news);
         }
         return allNews;
+    }
+
+    public static void main(String[] args) throws Exception {
+        fetchRecentNews();
     }
 
 }

@@ -3,6 +3,7 @@ tech/codingclub/helix/controller/ApplicationInterceptor.class
 tech/codingclub/helix/Keys$Identities0.class
 tech/codingclub/helix/controller/WebConfig.class
 tech/codingclub/helix/controller/ControllerUtils.class
+tech/codingclub/helix/entity/News.class
 tech/codingclub/helix/entity/UserBase.class
 tech/codingclub/helix/tables/records/UserRecord.class
 tech/codingclub/helix/entity/LoginResponse.class
@@ -20,6 +21,8 @@ tech/codingclub/helix/database/DatabaseUtil.class
 tech/codingclub/helix/database/DatabaseConnectionPool.class
 tech/codingclub/helix/entity/Location.class
 tech/codingclub/helix/controller/NonAPIController.class
+tech/codingclub/helix/entity/CurrentDay.class
+tech/codingclub/helix/entity/GoogleLocation.class
 tech/codingclub/helix/entity/User.class
 tech/codingclub/helix/global/SysProperties.class
 tech/codingclub/helix/fetcher/LocationFetcher.class

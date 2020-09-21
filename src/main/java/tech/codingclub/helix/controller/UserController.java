@@ -38,23 +38,21 @@ public class UserController extends BaseController {
         modelMap.addAttribute("LOCATION", location);
 
         // adding time-day-date to model-map
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        Date date = calendar.getTime();
-        int day = calendar.get(Calendar.DATE);
-        int month = calendar.get(Calendar.MONTH) + 1;
-        String temp  = date.toString();
-        String[] forDay = temp.split(" ");
-        String currentDay = forDay[0] + " ";
-        currentDay += day + "/";
-        currentDay += month;
+        CurrentDay currentDay = new CurrentDay();
+        currentDay = currentDay.getCurrentDayInfo();
 
-        modelMap.addAttribute("TIME", currentDay);
+        modelMap.addAttribute("DATE", currentDay);
 
         // adding recent news on welcome page
         NewsFetcher newsFetcher = new NewsFetcher();
         List<News> news = newsFetcher.fetchRecentNews();
 
         modelMap.addAttribute("NEWS", news);
+
+        // preparing link for google map
+        GoogleLocation googleLocation = new GoogleLocation();
+        googleLocation.linkForLocation =  "https://maps.google.com/maps?width=250&amp;height=200&amp;hl=en&amp;q=%20"+ location.city +"+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
+        modelMap.addAttribute("GOOGLELOCATION", googleLocation);
 
 
         return "welcome";

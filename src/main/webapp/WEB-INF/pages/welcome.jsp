@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
     import="java.io.*,java.util.*,java.sql.*"%>
 
@@ -8,7 +9,7 @@
     <link rel="short icon" type="image/png" href="/static/images/favicon.ico"/>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="/static/css/css-welcome.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/css-welcome.css?version=51">
         <link rel="stylesheet" type="text/css" href="/static/css/clock.css">
 
     </head>
@@ -113,52 +114,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="line-chart-block block clear"> <!-- LINE CHART BLOCK (LEFT-CONTAINER) -->
-                        <div class="line-chart">
-                          <!-- LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->
-                            <div class='grafico'>
-                               <ul class='eje-y'>
-                                 <li data-ejeY='70k'></li>
-                                 <li data-ejeY='67k'></li>
-                                 <li data-ejeY='63k'></li>
-                                 <li data-ejeY='60k'></li>
-                               </ul>
-                               <ul class='eje-x'>
-                                 <li>2008</li>
-                                 <li>2015</li>
-                                 <li>2018</li>
-                               </ul>
-                                 <span data-valor='20'>
-                                   <span data-valor='9'>
-                                     <span data-valor='13'>
-                                       <span data-valor='5'>
-                                         <span data-valor='23'>
-                                         <span data-valor='12'>
-                                             <span data-valor='15'>
-                                             </span></span></span></span></span></span></span>
-                            </div>
-                            <!-- END LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL -->
-                        </div>
-                        <ul class="time-lenght horizontal-list">
-                            <p style = "text-align:center">Growth of Rail lines (in kms)</p>
-
-                        </ul>
-                        <ul class="month-data clear">
-                            <li>
-                                <p>APR<span class="scnd-font-color"> 2008</span></p>
-                                <p><span> </span>60k</sup></p>
-                            </li>
-                            <li>
-                                <p>MAY<span class="scnd-font-color"> 2015</span></p>
-                                <p><span> </span>66k</sup></p>
-                            </li>
-                            <li>
-                                <p>JUN<span class="scnd-font-color"> 2018</span></p>
-                                <p><span> </span>68k</sup></p>
-                            </li>
-                        </ul>
-                    </div>
-
 
                 </div>
 
@@ -183,17 +138,19 @@
                     <div class="weather block clear" style="height: 200;"> <!-- WEATHER (MIDDLE-CONTAINER) -->
                         <h2 class="titular"><span class="icon entypo-location"></span><strong>${LOCATION.city}</strong></h2>
 
-
-
+                        <iframe width="300" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src=${GOOGLELOCATION.linkForLocation}></iframe> <a href='https://www.add-map.net/'>google map on my website</a> <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=03498a0242799ce6c55a852549bfa9e9d74e474a'></script>
                     </div>
+
+
                     <div class="tweets block"> <!-- TWEETS (MIDDLE-CONTAINER) -->
                         <h2 class="titular">LATEST NEWS</h2>
 
                         <c:forEach var="myNews" items="${NEWS}">
 
                             <div class="tweet first">
-                                <p>${myNews.news}<a class="tweet-link" href="#17">${myNews.time}</a></p>
-                                <p><a class="time-ago scnd-font-color" href="#18">${myNews.day}</a></p>
+                                <p>${myNews.news}</p>
+                                <p><a class="tweet-link" href=//${myNews.website} target="_blank">@ ${myNews.website}</a></p>
+                                <p><a class="time-ago scnd-font-color" href="#18">${myNews.day} @ ${myNews.time}</a></p>
                             </div>
 
                         </c:forEach>
@@ -214,114 +171,16 @@
                         </div>
                     </div>
 
-                    <div class="account block"> <!-- ACCOUNT (RIGHT-CONTAINER) -->
-                        <br>
-                        <h2 class="titular">CHANGE YOUR PASSWORD</h2>
-                        <div class="input-container">
-                            <input id="change-password1" type="password" placeholder="new password" class="email text-input">
-                            <div class="input-icon password-icon"><span class="fontawesome-lock scnd-font-color"></span></div>
-                        </div>
-                        <div class="input-container">
-                            <input id="change-password2" type="password" placeholder="confirm new password" class="password text-input" style="">
-                            <div class="input-icon password-icon"><span class="fontawesome-lock scnd-font-color"></span></div>
-                        </div>
-                        <a id="reset-button" class="sign-in button" href="#22">Reset Password</a>
-                        <b><p style = "color:red; display:none; font-size:15px" id = "signup-error"></p></b>
-
-                    </div>
-                    <div class="loading block"> <!-- LOADING (RIGHT-CONTAINER) -->
-                        <div class="progress-bar downloading"></div>
-                        <p><span class="icon fontawesome-cloud-download scnd-font-color"></span>Downloading...</p>
-                        <p class="percentage">81<sup>%</sup></p>
-                        <div class="progress-bar uploading"></div>
-                        <p><span class="icon fontawesome-cloud-upload scnd-font-color"></span>Uploading...</p>
-                        <p class="percentage">43<sup>%</sup></p>
-                    </div>
                     <div class="calendar-day block"> <!-- CALENDAR DAY (RIGHT-CONTAINER) -->
                         <div class="arrow-btn-container">
-                            <a class="arrow-btn left" href="#200"><span class="icon fontawesome-angle-left"></span></a>
-                            <h2 class="titular">WEDNESDAY</h2>
-                            <a class="arrow-btn right" href="#201"><span class="icon fontawesome-angle-right"></span></a>
+
+                            <h2 class="titular">${DATE.day}</h2>
+
                         </div>
-                            <p class="the-day">26</p>
-                            <a class="add-event button" href="#27">ADD EVENT</a>
+                            <p class="the-day">${DATE.date}</p>
+                            <a class="add-event button" href="https://calendar.google.com/calendar/u/0/r" target="_blank">ADD EVENT</a>
                     </div>
-                    <div class="calendar-month block"> <!-- CALENDAR MONTH (RIGHT-CONTAINER) -->
-                        <div class="arrow-btn-container">
-                            <a class="arrow-btn left" href="#202"><span class="icon fontawesome-angle-left"></span></a>
-                            <h2 class="titular">APRIL 2013</h2>
-                            <a class="arrow-btn right" href="#203"><span class="icon fontawesome-angle-right"></span></a>
-                        </div>
-                        <table class="calendar">
-                            <thead class="days-week">
-                                <tr>
-                                    <th>S</th>
-                                    <th>M</th>
-                                    <th>T</th>
-                                    <th>W</th>
-                                    <th>R</th>
-                                    <th>F</th>
-                                    <th>S</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><a class="scnd-font-color" href="#100">1</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a class="scnd-font-color" href="#101">2</a></td>
-                                    <td><a class="scnd-font-color" href="#102">3</a></td>
-                                    <td><a class="scnd-font-color" href="#103">4</a></td>
-                                    <td><a class="scnd-font-color" href="#104">5</a></td>
-                                    <td><a class="scnd-font-color" href="#105">6</a></td>
-                                    <td><a class="scnd-font-color" href="#106">7</a></td>
-                                    <td><a class="scnd-font-color" href="#107">8</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a class="scnd-font-color" href="#108">9</a></td>
-                                    <td><a class="scnd-font-color" href="#109">10</a></td>
-                                    <td><a class="scnd-font-color" href="#110">11</a></td>
-                                    <td><a class="scnd-font-color" href="#111">12</a></td>
-                                    <td><a class="scnd-font-color" href="#112">13</a></td>
-                                    <td><a class="scnd-font-color" href="#113">14</a></td>
-                                    <td><a class="scnd-font-color" href="#114">15</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a class="scnd-font-color" href="#115">16</a></td>
-                                    <td><a class="scnd-font-color" href="#116">17</a></td>
-                                    <td><a class="scnd-font-color" href="#117">18</a></td>
-                                    <td><a class="scnd-font-color" href="#118">19</a></td>
-                                    <td><a class="scnd-font-color" href="#119">20</a></td>
-                                    <td><a class="scnd-font-color" href="#120">21</a></td>
-                                    <td><a class="scnd-font-color" href="#121">22</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a class="scnd-font-color" href="#122">23</a></td>
-                                    <td><a class="scnd-font-color" href="#123">24</a></td>
-                                    <td><a class="scnd-font-color" href="#124">25</a></td>
-                                    <td><a class="today" href="#125">26</a></td>
-                                    <td><a href="#126">27</a></td>
-                                    <td><a href="#127">28</a></td>
-                                    <td><a href="#128">29</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#129">30</a></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> <!-- end calendar-month block -->
+
                 </div> <!-- end right-container -->
             </div> <!-- end main-container -->
 
@@ -396,27 +255,6 @@
 
                 });
 
-                function checkTime(i) {
-                  if (i < 10) {
-                    i = "0" + i;
-                  }
-                  return i;
-                }
-
-                function startTime() {
-                  var today = new Date();
-                  var h = today.getHours();
-                  var m = today.getMinutes();
-                  var s = today.getSeconds();
-                  // add a zero in front of numbers<10
-                  m = checkTime(m);
-                  s = checkTime(s);
-                  document.getElementById('time_zone').innerHTML = h + ":" + m + ":" + s;
-                  t = setTimeout(function() {
-                    startTime()
-                  }, 500);
-                }
-                startTime();
 
             </script>
 
